@@ -1,0 +1,13 @@
+---
+- hosts: ubuntu
+  become: yes
+  # remote_user: ansible
+  tasks:
+  - name: update the cache
+    apt:
+      name: update
+      update_cache: yes
+  - name: This will Install apache
+    apt:
+      name: apache2
+      state: present
